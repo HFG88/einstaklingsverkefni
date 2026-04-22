@@ -1,0 +1,46 @@
+.highlight {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.highlight__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.highlight__image-wrapper {
+  position: relative;
+  height: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.highlight__image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.highlight__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.1));
+}
+
+.highlight__title {
+  position: absolute;
+  bottom: 0.6rem;
+  left: 0.75rem;
+  right: 0.75rem;
+  margin: 0;
+  color: #f7ead3;
+  font-size: 1.4rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.highlight__description {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}

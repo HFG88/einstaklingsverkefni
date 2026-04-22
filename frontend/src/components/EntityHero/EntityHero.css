@@ -1,0 +1,99 @@
+.entity-hero {
+  padding: 0;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.entity-hero__image-wrapper {
+  position: relative;
+  min-height: 440px;
+}
+
+.entity-hero__image {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  display: block;
+}
+
+.entity-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(20, 12, 8, 0.88),
+    rgba(20, 12, 8, 0.38) 45%,
+    rgba(20, 12, 8, 0.08)
+  );
+}
+
+.entity-hero__content {
+  position: absolute;
+  left: 2rem;
+  right: 2rem;
+  bottom: 2rem;
+  display: grid;
+  gap: 0.85rem;
+  color: var(--text-light);
+}
+
+.entity-hero__type {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #e3c58f;
+}
+
+.entity-hero__title {
+  margin: 0;
+  color: #fff3dd;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.75);
+}
+
+.entity-hero__description {
+  margin: 0;
+  max-width: 72ch;
+  line-height: 1.65;
+  color: var(--text-light);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.65);
+}
+
+.entity-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.entity-hero__delete.form-button--danger {
+  background: linear-gradient(to bottom, #8b2f24, #5f1d16);
+  border-color: #5a1d17;
+}
+
+@media (max-width: 900px) {
+  .entity-hero__image-wrapper {
+    min-height: 320px;
+  }
+
+  .entity-hero__image {
+    height: 320px;
+  }
+
+  .entity-hero__content {
+    left: 1.2rem;
+    right: 1.2rem;
+    bottom: 1.2rem;
+    gap: 0.7rem;
+  }
+
+  .entity-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .entity-hero__actions .form-button {
+    width: 100%;
+  }
+}

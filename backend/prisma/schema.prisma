@@ -1,0 +1,119 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+    provider = "prisma-client"
+    output   = "../prisma/generated"
+}
+
+datasource db {
+    provider = "postgresql"
+}
+
+enum EntityType {
+    CHARACTER
+    LOCATION
+    FACTION
+    EVENT
+    NOTE
+}
+
+enum RelationType {
+    LIVES_IN
+    LOCATED_IN
+    MEMBER_OF
+    OCCURS_IN
+    RULES
+}
+
+model Entity {
+    id              Int        @id @default(autoincrement())
+    name            String
+    slug            String     @unique
+    description     String?
+    longDescription String?
+    imageUrl        String?
+    type            EntityType
+    createdAt       DateTime   @default(now())
+    updatedAt       DateTime   @updatedAt
+
+    outgoingRelations EntityRelation[] @relation("FromEntity")
+    incomingRelations EntityRelation[] @relation("ToEntity")
+
+    characterDetails CharacterDetails?
+    locationDetails  LocationDetails?
+    factionDetails   FactionDetails?
+    eventDetails     EventDetails?
+
+    @@index([type])
+    @@index([name])
+}
+
+model EntityRelation {
+    id        Int          @id @default(autoincrement())
+    fromId    Int
+    toId      Int
+    relation  RelationType
+    createdAt DateTime     @default(now())
+
+    from Entity @relation("FromEntity", fields: [fromId], references: [id], onDelete: Cascade)
+    to   Entity @relation("ToEntity", fields: [toId], references: [id], onDelete: Cascade)
+
+    @@unique([fromId, toId, relation])
+    @@index([fromId])
+    @@index([toId])
+    @@index([relation])
+}
+
+model CharacterDetails {
+    entityId Int    @id
+    entity   Entity @relation(fields: [entityId], references: [id], onDelete: Cascade)
+
+    race       String?
+    role       String?
+    profession String?
+    status     String?
+    age        Int?
+    gender     String?
+    alignment  String?
+    title      String?
+}
+
+model LocationDetails {
+    entityId Int    @id
+    entity   Entity @relation(fields: [entityId], references: [id], onDelete: Cascade)
+
+    locationType String?
+    size         String?
+    climate      String?
+    terrain      String?
+    population   Int?
+    wealthLevel  String?
+    dangerLevel  String?
+}
+
+model FactionDetails {
+    entityId Int    @id
+    entity   Entity @relation(fields: [entityId], references: [id], onDelete: Cascade)
+
+    factionType    String?
+    ideology       String?
+    goal           String?
+    reputation     String?
+    influenceLevel String?
+    wealthLevel    String?
+    foundedYear    Int?
+}
+
+model EventDetails {
+    entityId Int    @id
+    entity   Entity @relation(fields: [entityId], references: [id], onDelete: Cascade)
+
+    eventType    String?
+    date         String?
+    outcome      String?
+    significance String?
+}

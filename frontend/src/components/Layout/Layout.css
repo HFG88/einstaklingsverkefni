@@ -1,0 +1,137 @@
+.layout {
+  min-height: 100vh;
+  color: var(--text);
+}
+
+.layout__header {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 1rem auto 0;
+}
+
+/* === TOP BAR (PARCHMENT STYLE) === */
+.layout__topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 1.5rem 2rem;
+  border: 1px solid #7f5c3b;
+  border-radius: 18px 18px 0 0;
+
+  background:
+    radial-gradient(
+      circle at 20% 25%,
+      rgba(255, 255, 255, 0.15),
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(120, 80, 40, 0.08),
+      transparent 25%
+    ),
+    linear-gradient(to bottom, #ead8af, #d6bc8b);
+
+  box-shadow:
+    0 8px 22px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.layout__brand {
+  text-align: center;
+  flex: 1;
+}
+
+.layout__title {
+  margin: 0;
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  line-height: 1;
+  color: #3a2414;
+}
+
+.layout__subtitle {
+  margin: 0.4rem 0 0;
+  font-size: 1.1rem;
+  color: #4d3320;
+}
+
+.layout__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* === BUTTON === */
+.layout__new-entry {
+  border: 1px solid #6e4626;
+  background: linear-gradient(to bottom, #8f4f21, #6b3515);
+  color: #f8ead3;
+  padding: 0.7rem 1.4rem;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.layout__new-entry:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* === NAV BAR === */
+.layout__nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+
+  padding: 0.9rem 1.5rem;
+  border: 1px solid #53331f;
+  border-top: none;
+  border-radius: 0 0 18px 18px;
+
+  background: linear-gradient(to bottom, #5a341d, #3d2314);
+
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.layout__nav a {
+  color: #f3e6cf;
+  text-decoration: none;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.layout__nav a:hover {
+  color: #ffd898;
+}
+
+/* === MAIN === */
+.layout__main {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.5rem 0 2rem;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .layout__topbar {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .layout__actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .layout__nav {
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+  }
+}

@@ -1,0 +1,45 @@
+.entity-typed-details {
+  padding: 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.entity-typed-details h2 {
+  margin: 0;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.detail-item {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.95rem 1rem;
+  border-radius: 12px;
+  background: rgba(255, 248, 232, 0.72);
+  border: 1px solid rgba(139, 103, 68, 0.42);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.detail-item__label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #7a5a38;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.detail-item__value {
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 900px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+}

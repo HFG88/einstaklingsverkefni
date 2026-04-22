@@ -1,0 +1,31 @@
+.entity-detail-page {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.entity-detail-page__loading {
+  padding: 1.5rem;
+}
+
+.entity-long-description {
+  padding: 1.5rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.entity-long-description h2 {
+  margin: 0;
+}
+
+.entity-long-description p {
+  margin: 0;
+  line-height: 1.7;
+  max-width: 75ch;
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .entity-detail-page {
+    gap: 1.25rem;
+  }
+}

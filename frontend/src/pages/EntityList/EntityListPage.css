@@ -1,0 +1,36 @@
+.entity-list-page {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.entity-list-page__header {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.entity-list-page__header h1 {
+  margin: 0 0 0.4rem;
+}
+
+.entity-list-page__header p {
+  margin: 0;
+  max-width: 60ch;
+}
+
+.entity-list-page__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.entity-list-page__empty {
+  padding: 1.5rem;
+}
+
+.entity-list-page__empty h2 {
+  margin: 0 0 0.5rem;
+}
