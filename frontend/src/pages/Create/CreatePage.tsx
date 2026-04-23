@@ -1,6 +1,6 @@
 import { Layout } from "../../components/Layout/Layout";
 import { EntityTypeGrid } from "../../components/EntityTypeGrid/EntityTypeGrid";
-import "./CreatePage.css";
+import "./createpage.css";
 
 export function CreatePage() {
   return (
