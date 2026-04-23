@@ -9,7 +9,7 @@ import { EventFields } from "../../components/EventFields/EventFields";
 import { EventRelationFields } from "../../components/EventRelationFields/EventRelationFields";
 import { FactionFields } from "../../components/FactionFields/FactionFields";
 import { FactionRelationFields } from "../../components/FactionRelationFields/FactionRelationFields";
-import "../CreateEntity/createentitypage.css";
+import "../CreateEntity/CreateEntityPage.css";
 import type {
   CreatedOrUpdatedEntityResponse,
   EntityOption,
