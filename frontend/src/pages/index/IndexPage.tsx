@@ -1,6 +1,6 @@
 import { Layout } from "../../components/Layout/Layout";
 import { EntityTypeGrid } from "../../components/EntityTypeGrid/EntityTypeGrid";
-import "./IndexPage.css";
+import "./indexpage.css";
 import { RandomEntityHighlight } from "../../components/EntityHiglightCard/EntityHighlight";
 
 export function IndexPage() {
