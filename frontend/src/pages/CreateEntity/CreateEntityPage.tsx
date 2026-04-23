@@ -21,7 +21,7 @@ import type { RelationType } from "../../types/relation";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-export function EditEntityPage() {
+export function CreateEntityPage() {
   const { type, slug } = useParams<{ type: EntityTypeLower; slug: string }>();
   const navigate = useNavigate();
 
